@@ -114,6 +114,11 @@ strong {
   padding: 30px;
 }
 
+.app-icon-img {
+  object-fit: contain;
+  padding: 16px;
+}
+
 .site-thumb {
   width: 160px;
   height: 120px;
