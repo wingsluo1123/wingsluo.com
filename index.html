@@ -1,116 +1,169 @@
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="罗万煦（WingsLuo）的个人主页，记录应用开发、RAG 服务、传统文化工具和个人项目。">
-  <title>罗万煦 | WingsLuo</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Wanxu Luo (WingsLuo) personal homepage.">
+  <title>Wanxu Luo</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
-  <main class="page">
-    <header class="profile">
-      <div class="profile-copy">
-        <p class="eyebrow">WingsLuo · Personal Website</p>
-        <h1>罗万煦</h1>
-        <p class="subtitle">HarmonyOS developer, RAG builder, and creator of practical tools around Chinese traditional knowledge.</p>
-        <p class="intro">
-          我正在构建「清一罗盘」和相关 AI/RAG 服务，希望把传统堪舆知识、移动端体验和现代检索增强技术结合起来，
-          做成真正可用、可维护、可持续演进的产品。
-        </p>
-        <nav class="links" aria-label="Primary links">
-          <a href="https://github.com/wingsluo1123">GitHub</a>
-          <a href="mailto:2906545455@qq.com">Email</a>
-          <a href="https://rag.wingsluo.com">RAG API</a>
-        </nav>
-      </div>
-      <div class="profile-media">
-        <img src="assets/qingyi.jpg" alt="清一罗盘应用图标">
-      </div>
-    </header>
+  <table class="main-table" align="center" cellspacing="0" cellpadding="20">
+    <tr>
+      <td>
+        <table width="100%" align="center" cellspacing="0" cellpadding="20">
+          <tr>
+            <td width="68%" valign="middle">
+              <p class="name" align="center">Wanxu Luo 「罗万煦」</p>
+              <p>
+                I am an independent developer interested in mobile applications, AI assistants,
+                retrieval-augmented generation, and practical knowledge tools.
+              </p>
+              <p>
+                Recently I have been building <strong>Compass</strong>, a HarmonyOS application that combines
+                traditional compass utilities, astrological charting, a personal knowledge base, and AI-assisted reading.
+                I also maintain the backend RAG service behind the app.
+              </p>
+              <p>
+                This page is a lightweight home for my projects, notes, and contact information.
+                It will grow as I publish more work beyond Compass.
+              </p>
+              <p align="center">
+                <a href="mailto:2906545455@qq.com">Email</a> &nbsp;/&nbsp;
+                <a href="https://github.com/wingsluo1123">GitHub</a> &nbsp;/&nbsp;
+                <a href="https://rag.wingsluo.com">RAG Service</a>
+              </p>
+            </td>
+            <td width="32%" valign="middle" align="center">
+              <div class="portrait">WL</div>
+            </td>
+          </tr>
+        </table>
 
-    <section class="section">
-      <div class="section-title">
-        <span>01</span>
-        <h2>About</h2>
-      </div>
-      <div class="section-body">
-        <p>
-          我关注个人软件产品、移动应用体验、知识库检索和 AI assistant 的实际落地。
-          当前主要项目围绕 HarmonyOS App、Python RAG backend、Cloudflare Tunnel/Pages 部署以及个人知识管理展开。
-        </p>
-        <p>
-          这个网站会逐步沉淀我的项目、文章、实验记录和联系方式。相比社交平台，我希望这里成为一个更稳定的个人入口。
-        </p>
-      </div>
-    </section>
+        <table width="100%" align="center" cellspacing="0" cellpadding="10">
+          <tr>
+            <td><span class="sectionheading">News</span></td>
+          </tr>
+        </table>
+        <table width="100%" align="center" cellspacing="0" cellpadding="15">
+          <tr>
+            <td width="18%" valign="top"><strong>2026.06</strong></td>
+            <td>
+              Launched <a href="https://wingsluo.com">wingsluo.com</a> as my personal website.
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" valign="top"><strong>2026.06</strong></td>
+            <td>
+              Connected <a href="https://rag.wingsluo.com">rag.wingsluo.com</a> to my Compass RAG backend.
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" valign="top"><strong>2026</strong></td>
+            <td>
+              Developing user-uploaded documents, vectorization, and account-based knowledge isolation for Compass.
+            </td>
+          </tr>
+        </table>
 
-    <section class="section">
-      <div class="section-title">
-        <span>02</span>
-        <h2>Projects</h2>
-      </div>
-      <div class="project-list">
-        <article class="project">
-          <img src="assets/compass.png" alt="清一罗盘界面与罗盘视觉">
-          <div>
-            <h3>清一罗盘</h3>
-            <p>
-              面向风水爱好者的 HarmonyOS 应用，包含罗盘测向、星盘排盘、知识库管理和 AI 智能问答。
-            </p>
-            <p class="meta">HarmonyOS · ArkTS · Mobile UI</p>
-          </div>
-        </article>
+        <table width="100%" align="center" cellspacing="0" cellpadding="10">
+          <tr>
+            <td><span class="sectionheading">Projects</span></td>
+          </tr>
+        </table>
 
-        <article class="project">
-          <img src="assets/tab_knowledge.svg" alt="知识库图标">
-          <div>
-            <h3>Compass RAG Server</h3>
-            <p>
-              为 App 提供文献上传、chunk 切分、向量化检索和流式 RAG 查询能力的 Python 后端服务。
-            </p>
-            <p class="meta">FastAPI · ChromaDB · Sentence Transformers</p>
-          </div>
-        </article>
+        <table width="100%" align="center" cellspacing="0" cellpadding="15">
+          <tr>
+            <td width="25%" valign="top">
+              <img class="project-img" src="assets/compass.png" alt="Compass project preview">
+            </td>
+            <td width="75%" valign="top">
+              <span class="papertitle">Compass / 清一罗盘</span>
+              <br>
+              HarmonyOS application for compass measurement, charting, knowledge-base management, and AI chat.
+              <br>
+              <span class="tags">HarmonyOS, ArkTS, Mobile UI, Product Design</span>
+            </td>
+          </tr>
 
-        <article class="project">
-          <img src="assets/tab_ai.svg" alt="AI 图标">
-          <div>
-            <h3>AI Knowledge Assistant</h3>
-            <p>
-              将传统文献内容转化为可检索的语义资料，辅助用户围绕原文进行解释、引用和学习。
-            </p>
-            <p class="meta">RAG · Knowledge Base · Product Design</p>
-          </div>
-        </article>
-      </div>
-    </section>
+          <tr>
+            <td width="25%" valign="top">
+              <img class="project-img icon-img" src="assets/tab_knowledge.svg" alt="Knowledge base icon">
+            </td>
+            <td width="75%" valign="top">
+              <span class="papertitle">Compass RAG Server</span>
+              <br>
+              A FastAPI backend that supports document upload, text chunking, embedding, hybrid retrieval, and streaming RAG responses.
+              <br>
+              <span class="tags">FastAPI, ChromaDB, Sentence Transformers, Cloudflare Tunnel</span>
+            </td>
+          </tr>
 
-    <section class="section">
-      <div class="section-title">
-        <span>03</span>
-        <h2>Notes</h2>
-      </div>
-      <div class="section-body">
-        <ul class="notes">
-          <li>正在完善多用户登录与知识库隔离。</li>
-          <li>正在整理个人网站、App 后端服务和公开项目结构。</li>
-          <li>后续会在这里发布开发记录、产品说明和技术文章。</li>
-        </ul>
-      </div>
-    </section>
+          <tr>
+            <td width="25%" valign="top">
+              <img class="project-img icon-img" src="assets/tab_ai.svg" alt="AI assistant icon">
+            </td>
+            <td width="75%" valign="top">
+              <span class="papertitle">AI Knowledge Assistant</span>
+              <br>
+              A reading assistant that retrieves relevant document chunks and grounds answers in uploaded literature.
+              <br>
+              <span class="tags">RAG, Knowledge Base, LLM Application</span>
+            </td>
+          </tr>
 
-    <section class="section contact">
-      <div class="section-title">
-        <span>04</span>
-        <h2>Contact</h2>
-      </div>
-      <div class="section-body">
-        <p>Email: <a href="mailto:2906545455@qq.com">2906545455@qq.com</a></p>
-        <p>GitHub: <a href="https://github.com/wingsluo1123">github.com/wingsluo1123</a></p>
-        <p>Domain: <a href="https://wingsluo.com">wingsluo.com</a></p>
-      </div>
-    </section>
-  </main>
+          <tr>
+            <td width="25%" valign="top">
+              <div class="site-thumb">W</div>
+            </td>
+            <td width="75%" valign="top">
+              <span class="papertitle">wingsluo.com</span>
+              <br>
+              My personal site for projects, notes, and future writing.
+              <br>
+              <span class="tags">Cloudflare Pages, GitHub, Static Site</span>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" cellspacing="0" cellpadding="10">
+          <tr>
+            <td><span class="sectionheading">Interests</span></td>
+          </tr>
+        </table>
+        <table width="100%" align="center" cellspacing="0" cellpadding="15">
+          <tr>
+            <td>
+              <p>
+                <strong>Product:</strong> mobile apps, clean interaction design, personal tools.
+              </p>
+              <p>
+                <strong>AI:</strong> RAG systems, document understanding, knowledge-base assistants.
+              </p>
+              <p>
+                <strong>Culture:</strong> traditional Chinese knowledge, compass tools, and structured interpretation workflows.
+              </p>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" cellspacing="0" cellpadding="10">
+          <tr>
+            <td><span class="sectionheading">Contact</span></td>
+          </tr>
+        </table>
+        <table width="100%" align="center" cellspacing="0" cellpadding="15">
+          <tr>
+            <td>
+              Email: <a href="mailto:2906545455@qq.com">2906545455@qq.com</a><br>
+              GitHub: <a href="https://github.com/wingsluo1123">github.com/wingsluo1123</a><br>
+              Website: <a href="https://wingsluo.com">wingsluo.com</a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>
