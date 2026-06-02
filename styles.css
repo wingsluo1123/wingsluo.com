@@ -1,29 +1,12 @@
-/* latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'),
-    url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
-}
-
-/* latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'),
-    url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
-}
-
 body,
 td,
 th,
 tr,
 p,
 a {
-  font-family: 'Lato', Verdana, Helvetica, "Microsoft YaHei", sans-serif;
-  font-size: 14px;
+  font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 body {
@@ -49,9 +32,9 @@ p {
 }
 
 strong {
-  font-family: 'Lato', Verdana, Helvetica, "Microsoft YaHei", sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+  font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .main-table {
@@ -61,21 +44,25 @@ strong {
 }
 
 .name {
-  font-size: 32px;
+  font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
+  font-size: 38px;
+  font-weight: 400;
   line-height: 1.15;
   margin: 0 0 20px;
 }
 
 .sectionheading {
   display: inline-block;
+  font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 600;
   margin-top: 8px;
 }
 
 .papertitle {
-  font-size: 15px;
-  font-weight: 700;
+  font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .tags {
@@ -149,7 +136,7 @@ strong {
   }
 
   .name {
-    font-size: 29px;
+    font-size: 32px;
   }
 
   .portrait {
