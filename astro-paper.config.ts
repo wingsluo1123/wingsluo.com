@@ -4,7 +4,7 @@ export default defineAstroPaperConfig({
   site: {
     url: "https://wingsluo.com/",
     title: "WingsLuo",
-    description: "记录开发、学习与生活。",
+    description: "计算机网络、物联网控制学习笔记，以及开发实践与生活记录。",
     author: "WingsLuo",
     profile: "https://wingsluo.com/about/",
     ogImage: "default-og.png",

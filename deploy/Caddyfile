@@ -25,3 +25,20 @@ wingsluo.com {
 http://120.25.207.55 {
     import wingsluo-blog
 }
+
+# Private preview, reachable through SSH port forwarding only.
+http://:4321 {
+    bind 127.0.0.1
+    root * /var/www/wingsluo.com/preview
+    encode zstd gzip
+    file_server
+    header X-Robots-Tag "noindex, nofollow, noarchive"
+    header X-Content-Type-Options "nosniff"
+    handle_errors {
+        @notFound expression {http.error.status_code} == 404
+        handle @notFound {
+            rewrite * /404.html
+            file_server
+        }
+    }
+}
