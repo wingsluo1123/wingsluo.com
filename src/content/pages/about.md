@@ -3,9 +3,9 @@ title: "关于"
 description: "关于 WingsLuo 和这个博客。"
 ---
 
-你好，我是 WingsLuo。
+你好，我是 **WingsLuo**。
 
-这是一个基于Astropaper做的个人博客。只是方便自己查看文档。
+这是一个基于 **Astropaper** 做的个人博客，只是方便自己查看文档。
 
 ## 联系我
 

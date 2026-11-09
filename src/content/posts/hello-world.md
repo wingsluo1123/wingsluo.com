@@ -8,6 +8,6 @@ draft: false
 
 欢迎来到我的博客。
 
-不用期待什么，这是放一些我的文档，方便查看，
+不用期待什么，只是放一些我的文档，方便查看，
 
-Just a tool , don't care .
+Just a tool and just for convinience, don't care .
