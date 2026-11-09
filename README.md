@@ -45,6 +45,16 @@ Google Sans Code 字体已随项目保存到 `src/assets/fonts/`，构建时无�
 
 服务器提供仅监听 `127.0.0.1:4321` 的预览入口，不需要在安全组开放 4321 端口。预览根目录为 `/var/www/wingsluo.com/preview`，独立于公网网站的 `current` 目录；源文件修改后需要重新构建、更新预览目录才能看到变化。
 
+当前服务器已安装 Node.js 24 和更新命令。保存文章后，在 VS Code 的远程终端执行：
+
+```sh
+blog-preview-update
+```
+
+看到“私人预览已更新”后刷新浏览器。该命令使用服务器当前保存的源码，无需先提交 Git；首次运行或依赖变化时自动安装依赖，并重新生成页面和搜索索引。它只更新私人预览目录，构建失败时保留已有预览。
+
+命令源码为 `deploy/update-preview.sh`，安装位置为 `/usr/local/bin/blog-preview-update`，Node.js 位于 `/opt/node-v24.22.2-linux-x64`。构建任务限制为 900 MB 内存、1 GB Swap 和一个 CPU 核心；需要 root 或 sudo 权限。构建输出和报错会显示在运行命令的终端中。以上限制用于控制构建资源，不能保证在任何资源条件下都成功。
+
 在 VS Code 通过 Remote SSH 连接服务器，打开 `/srv/wingsluo.com`，在“端口”面板点击“转发端口”，填写 `4321`，然后打开该行的本地地址。也可以在自己电脑的终端执行：
 
 ```sh
