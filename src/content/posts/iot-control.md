@@ -1,8 +1,8 @@
 ---
-title: "物联网控制：期中复习笔记"
+title: "物联网控制"
 pubDatetime: 2026-11-09T00:00:00+08:00
-description: "自动控制与物联网控制概述、系统建模、拉普拉斯变换，以及 PID 控制算法的复习记录与例题。"
-tags: ["物联网控制", "自动控制", "PID", "学习笔记"]
+description: "物联网控制etudier"
+tags: ["etudier"]
 draft: false
 ---
 

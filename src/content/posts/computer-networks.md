@@ -1,8 +1,8 @@
 ---
-title: "计算机网络：数据链路层笔记"
+title: "计网"
 pubDatetime: 2026-11-09T00:00:00+08:00
-description: "差错检测与 CRC、可靠传输，以及停止等待、回退 N 帧、选择重传和 PPP 协议的学习记录。"
-tags: ["计算机网络", "数据链路层", "可靠传输", "学习笔记"]
+description: "计网etudier"
+tags: ["etudier"]
 draft: false
 ---
 
