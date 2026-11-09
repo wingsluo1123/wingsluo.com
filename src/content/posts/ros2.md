@@ -1,12 +1,12 @@
 ---
-title: "ROS 2 学习笔记"
-pubDatetime: 2026-11-09T00:00:00+08:00
-description: "ROS 2 功能包中添加节点的 CMake 配置，以及 C++ 新特性的学习记录。"
-tags: ["ROS 2", "CMake", "C++", "学习笔记"]
+title: "ros2"
+pubDatetime: 2026-11-10T00:00:00+08:00
+description: "一些跟着鱼香ros学的皮毛"
+tags: ["ros2", "etudier"]
 draft: false
 ---
 
-## CMake注意事项
+## CMake 注意事项
 
 当在一个功能包中添加了一个新的节点：`<文字 示例>`
 
@@ -22,7 +22,7 @@ install(TARGETS
 )
 ```
 
-## cpp新特性
+## cpp 新特性
 
 **auto** 自动推导变量类型
 
