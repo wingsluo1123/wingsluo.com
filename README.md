@@ -41,6 +41,13 @@ Google Sans Code 字体已随项目保存到 `src/assets/fonts/`，构建时无�
 
 目前保留原版文章列表；正文支持图片，列表封面及评论尚未添加。
 
+已导入的课程笔记：
+
+- 物联网控制：期中复习笔记，正文在 `src/content/posts/iot-control-midterm.md`，原图在 `public/images/iot-control-midterm/`。
+- 计算机网络：数据链路层笔记，正文在 `src/content/posts/computer-networks-data-link.md`，原图在 `public/images/computer-networks-data-link/`。
+
+两篇笔记保留原有正文，图片统一使用 Markdown 引用，适应正文宽度并支持点击放大。以后可直接修改上述博客文件，保存后运行 `blog-preview-update`。电脑原始学习目录中的文件不会自动同步到博客。
+
 ## 备案期间的私人预览
 
 服务器提供仅监听 `127.0.0.1:4321` 的预览入口，不需要在安全组开放 4321 端口。预览根目录为 `/var/www/wingsluo.com/preview`，独立于公网网站的 `current` 目录；源文件修改后需要重新构建、更新预览目录才能看到变化。
