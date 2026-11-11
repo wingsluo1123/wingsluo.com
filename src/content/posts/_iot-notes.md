@@ -4,6 +4,8 @@ pubDatetime: 2026-11-09T00:00:00+08:00
 description: "说明本次设备实验或控制逻辑要解决的问题。"
 tags: ["物联网控制"]
 draft: true
+typora-root-url: ../../../public
+typora-copy-images-to: ../../../public/images/iot-notes
 ---
 
 复制为新的 `.md` 文件并去掉文件名开头的下划线，修改标题、日期和简介。标签可以补充实际使用的协议或设备，例如 `MQTT`；需要生成页面时将 `draft` 改成 `false`。

@@ -5,6 +5,7 @@ description: "计网etudier"
 tags: ["etudier"]
 draft: false
 typora-root-url: ../../../public
+typora-copy-images-to: ../../../public/images/computer-networks
 ---
 
 ## 第三章 数据传输层

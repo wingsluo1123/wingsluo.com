@@ -4,6 +4,8 @@ pubDatetime: 2026-11-10T00:00:00+08:00
 description: "一些跟着鱼香ros学的皮毛"
 tags: ["ros2", "etudier"]
 draft: false
+typora-root-url: ../../../public
+typora-copy-images-to: ../../../public/images/ros2
 ---
 
 ## CMake 注意事项

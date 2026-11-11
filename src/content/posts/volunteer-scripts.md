@@ -5,6 +5,8 @@ description: "志愿服务通用话术本、专项话术本的 PDF 阅读与下�
 tags: ["志愿服务", "资料"]
 featured: true
 draft: false
+typora-root-url: ../../../public
+typora-copy-images-to: ../../../public/images/volunteer-scripts
 ---
 
 两份话术本可直接打开阅读，也可以下载到设备上离线查看。若手机浏览器没有显示下方预览，请使用“打开 PDF 阅读”链接。

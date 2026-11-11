@@ -4,6 +4,8 @@ pubDatetime: 2026-11-09T00:00:00+08:00
 description: "一个方便自己查看文档的地方"
 tags: ["随笔"]
 draft: false
+typora-root-url: ../../../public
+typora-copy-images-to: ../../../public/images/hello-world
 ---
 
 欢迎来到我的博客。

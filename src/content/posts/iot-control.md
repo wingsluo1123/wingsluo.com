@@ -5,6 +5,7 @@ description: "物联网控制etudier"
 tags: ["etudier"]
 draft: false
 typora-root-url: ../../../public
+typora-copy-images-to: ../../../public/images/iot-control
 ---
 
 ## **第一章**

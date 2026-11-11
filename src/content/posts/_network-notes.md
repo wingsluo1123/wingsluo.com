@@ -4,6 +4,8 @@ pubDatetime: 2026-11-09T00:00:00+08:00
 description: "说明本篇笔记要弄清楚的问题。"
 tags: ["计算机网络"]
 draft: true
+typora-root-url: ../../../public
+typora-copy-images-to: ../../../public/images/network-notes
 ---
 
 复制为新的 `.md` 文件并去掉文件名开头的下划线，修改标题、日期和简介，开始记录。需要生成页面时将 `draft` 改成 `false`；预览版本和正式版本分别发布。

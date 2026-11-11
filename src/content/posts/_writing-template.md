@@ -4,6 +4,8 @@ pubDatetime: 2026-11-09T00:00:00+08:00
 description: "用一句话概括文章。"
 tags: ["笔记"]
 draft: true
+typora-root-url: ../../../public
+typora-copy-images-to: ../../../public/images/writing-template
 ---
 
 以 `_` 开头的文件不会被内容集合读取。写新文章时，复制本文件，去掉文件名开头的下划线，修改标题、日期、简介和标签，最后将 `draft` 改为 `false`。
