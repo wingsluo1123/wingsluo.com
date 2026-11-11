@@ -153,3 +153,11 @@ typora-copy-images-to: ../../../public/images/computer-networks
 ![计算机网络笔记配图 24](/images/computer-networks/image-20261108120944880.png)
 
 **如何实现透明传输**
+
+PPP 帧会有定界符，帧中含有数据部分，但是如果数据部分中包含了与定界符相同的字节，接收方该如何确定数据部分是哪一部分呢？
+
+**字节填充法：插入转义字符**
+
+<img src="/images/computer-networks/image-20261111161006031.png" alt="image-20261111161006031" style="zoom: 80%;" />
+
+**比特填充法：插入“插入比特 0 ”**
