@@ -38,3 +38,6 @@ compose.override.yaml
 !.env.example
 *.pem
 *.key
+
+# PDF.js resources are copied from the installed dependency before dev/build.
+public/pdfjs/

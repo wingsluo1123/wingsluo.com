@@ -1,0 +1,234 @@
+@import "pdfjs-dist/web/pdf_viewer.css";
+
+.pdf-reader {
+  width: min(100%, 1440px);
+  margin: 1.5rem auto 3rem;
+  padding-inline: 1rem;
+}
+.reader-heading {
+  margin-bottom: 1.5rem;
+}
+.reader-back {
+  color: var(--accent);
+  text-underline-offset: 4px;
+}
+.reader-back:hover {
+  text-decoration: underline;
+}
+.reader-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.reader-title-row h1 {
+  font-size: clamp(1.25rem, 3vw, 1.8rem);
+  font-weight: 700;
+}
+.reader-subtitle,
+.reader-hint {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+}
+.reader-subtitle {
+  margin-top: 0.5rem;
+}
+.reader-button,
+.reader-toolbar select,
+.reader-sidebar input,
+#pdf-page {
+  border: 1px solid var(--border);
+  border-radius: 0.35rem;
+  background: var(--background);
+  color: var(--foreground);
+  padding: 0.45rem 0.65rem;
+  font: inherit;
+}
+.reader-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 2.75rem;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+.reader-button:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.reader-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.reader-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-block: 1px solid var(--border);
+  background: var(--background);
+}
+.reader-paging,
+.reader-paging form,
+.reader-zoom {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+#pdf-page {
+  width: 4rem;
+  min-height: 2.75rem;
+}
+.reader-toolbar select {
+  min-height: 2.75rem;
+}
+.reader-layout {
+  display: grid;
+  grid-template-columns: 16rem minmax(0, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.reader-sidebar {
+  min-width: 0;
+}
+.reader-sidebar details {
+  position: sticky;
+  top: 6rem;
+  border: 1px solid var(--border);
+  border-radius: 0.35rem;
+}
+.reader-sidebar summary {
+  padding: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.reader-sidebar-body {
+  padding: 0 0.85rem 1rem;
+  max-height: calc(100dvh - 11rem);
+  overflow: auto;
+}
+.reader-sidebar h2 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.reader-sidebar label {
+  font-size: 0.875rem;
+}
+.reader-search-row {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+.reader-search-row input {
+  width: 100%;
+  min-width: 0;
+}
+.reader-hint {
+  margin-block: 0.5rem;
+}
+.reader-sidebar ol {
+  list-style: none;
+}
+.reader-sidebar ol ol {
+  padding-left: 0.8rem;
+  border-left: 1px solid var(--border);
+}
+.reader-sidebar li {
+  margin-block: 0.3rem;
+}
+.reader-sidebar li button {
+  width: 100%;
+  text-align: left;
+  padding: 0.4rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  overflow-wrap: anywhere;
+}
+.reader-sidebar li button:hover,
+.reader-sidebar li button:focus-visible {
+  background: var(--muted);
+  color: var(--accent);
+}
+.reader-results {
+  max-height: 18rem;
+  overflow: auto;
+}
+.reader-content {
+  min-width: 0;
+}
+.reader-status {
+  min-height: 1.75rem;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+.reader-error {
+  padding: 1rem;
+  border: 1px solid var(--accent);
+  margin-block: 0.5rem 1rem;
+}
+.reader-error p {
+  margin-bottom: 0.75rem;
+}
+.reader-stage {
+  overflow: auto;
+  padding: 1rem;
+  background: var(--muted);
+  border-radius: 0.35rem;
+  min-height: 20rem;
+  max-height: 85dvh;
+  overscroll-behavior-inline: contain;
+}
+.reader-paper {
+  position: relative;
+  margin-inline: auto;
+  background: white;
+  width: fit-content;
+  box-shadow: 0 2px 8px #0002;
+}
+.reader-paper canvas {
+  display: block;
+}
+.reader-paper .textLayer {
+  opacity: 1;
+}
+.reader-paper .textLayer ::selection {
+  background: #1476ff55;
+}
+.reader-paper .textLayer .reader-search-hit {
+  background: #ffdb5670;
+}
+@media (max-width: 800px) {
+  .reader-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+  .reader-sidebar details {
+    position: static;
+  }
+  .reader-sidebar-body {
+    max-height: 22rem;
+  }
+  .reader-title-row {
+    align-items: flex-start;
+  }
+  .reader-title-row > a {
+    font-size: 0.8rem;
+  }
+  .reader-stage {
+    padding: 0.5rem;
+    max-height: 80dvh;
+  }
+  .reader-toolbar {
+    font-size: 0.875rem;
+  }
+  .reader-go {
+    display: none;
+  }
+}

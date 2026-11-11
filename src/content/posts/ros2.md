@@ -58,7 +58,7 @@ int main() {
   Use myuse;
   //lambda 表达式
   auto lambda_use = [](const std::string & s) -> void { std::cout << "lambda表达式 " << s << std::endl; };
-  
+
   //使用函数包装器来统一不同形式的函数的调用方式
   std::function<void(const std::string &)> use1 = free_use;
   std::function<void(const std::string &)> use2 = lambda_use;
@@ -73,4 +73,3 @@ int main() {
 }
 
 ```
-
