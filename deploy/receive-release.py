@@ -15,10 +15,13 @@ import tempfile
 
 BASE = Path('/var/www/wingsluo-live')
 command = os.environ.get('SSH_ORIGINAL_COMMAND', '')
-match = re.fullmatch(r'deploy ([0-9a-f]{40})', command)
+if command.startswith('rsync --server '):
+    # Ubuntu's restricted rsync validates every argument and confines writes.
+    os.execv('/usr/bin/rrsync', ['rrsync', '-wo', '-munge', str(BASE / 'incoming')])
+match = re.fullmatch(r'(deploy|activate) ([0-9a-f]{40})', command)
 if not match:
-    sys.exit('Only deploy <commit SHA> is permitted.')
-sha = match.group(1)
+    sys.exit('Only restricted rsync, deploy <SHA>, or activate <SHA> is permitted.')
+mode, sha = match.groups()
 
 with (BASE / '.deploy.lock').open('w') as lock:
     fcntl.flock(lock, fcntl.LOCK_EX)
@@ -26,28 +29,40 @@ with (BASE / '.deploy.lock').open('w') as lock:
     previous = (BASE / 'current').resolve() if (BASE / 'current').exists() else None
     switched = False
     try:
-        # Store a bounded archive first so validation completes before extraction.
-        archive_path = staging / 'build.tar.gz'
-        with archive_path.open('wb') as output:
-            total = 0
-            while chunk := sys.stdin.buffer.read(1024 * 1024):
-                total += len(chunk)
-                if total > 512 * 1024 * 1024:
-                    raise ValueError('Build archive exceeds 512 MiB.')
-                output.write(chunk)
         content = staging / 'site'
-        content.mkdir()
-        with tarfile.open(archive_path, 'r:gz') as archive:
-            members = archive.getmembers()
-            if sum(member.size for member in members) > 2 * 1024**3:
-                raise ValueError('Extracted build exceeds 2 GiB.')
-            for member in members:
-                if not (member.isfile() or member.isdir()):
+        if mode == 'activate':
+            incoming = BASE / 'incoming' / 'build'
+            total = 0
+            for item in incoming.rglob('*'):
+                if item.is_symlink() or not (item.is_file() or item.is_dir()):
                     raise ValueError('Only regular files and directories are allowed.')
-                target = (content / member.name).resolve()
-                if not target.is_relative_to(content.resolve()):
-                    raise ValueError('Archive path escapes release directory.')
-            archive.extractall(content, members=members, filter='data')
+                if item.is_file():
+                    total += item.stat().st_size
+                if total > 2 * 1024**3:
+                    raise ValueError('Build exceeds 2 GiB.')
+            shutil.copytree(incoming, content)
+        else:
+            # Bounded archive mode also supports initial/manual deployment.
+            archive_path = staging / 'build.tar.gz'
+            with archive_path.open('wb') as output:
+                total = 0
+                while chunk := sys.stdin.buffer.read(1024 * 1024):
+                    total += len(chunk)
+                    if total > 512 * 1024 * 1024:
+                        raise ValueError('Build archive exceeds 512 MiB.')
+                    output.write(chunk)
+            content.mkdir()
+            with tarfile.open(archive_path, 'r:gz') as archive:
+                members = archive.getmembers()
+                if sum(member.size for member in members) > 2 * 1024**3:
+                    raise ValueError('Extracted build exceeds 2 GiB.')
+                for member in members:
+                    if not (member.isfile() or member.isdir()):
+                        raise ValueError('Only regular files and directories are allowed.')
+                    target = (content / member.name).resolve()
+                    if not target.is_relative_to(content.resolve()):
+                        raise ValueError('Archive path escapes release directory.')
+                archive.extractall(content, members=members, filter='data')
         for required in ['index.html', '404.html', '_astro', 'pagefind']:
             if not (content / required).exists():
                 raise ValueError('Build is missing ' + required)

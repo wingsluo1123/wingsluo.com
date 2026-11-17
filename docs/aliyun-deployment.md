@@ -31,6 +31,8 @@ Cloudflare 原有构建可保留作为备用；域名通过灰云 A 记录直连
 
 GitHub Actions 通过专用 `blogdeploy` 用户上传构建产物。部署密钥只能运行部署命令，
 不能获得普通 SSH 终端，服务器不保存 GitHub 访问令牌。
+上传使用受限 rsync，只传输有变化的文件，避免每次更新文章都重复上传图片和 PDF。
+上传到 `incoming/build` 后才生成独立发布目录；未完成的上传不影响线上版本。
 仓库 Secrets：`ALIYUN_DEPLOY_KEY`、`ALIYUN_KNOWN_HOSTS`。
 
 ## 回退与排查

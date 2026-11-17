@@ -35,7 +35,7 @@ jobs:
     if: github.ref == 'refs/heads/feat/astropaper-blog' && github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     concurrency:
       group: aliyun-production
       cancel-in-progress: false
@@ -63,8 +63,16 @@ jobs:
           printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/aliyun_deploy
           printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/aliyun_deploy ~/.ssh/known_hosts
-          tar -czf "$RUNNER_TEMP/blog.tar.gz" -C dist .
+          export RSYNC_RSH="ssh -i $HOME/.ssh/aliyun_deploy -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=20 -o IPQoS=none -o ServerAliveInterval=15 -o ServerAliveCountMax=4"
+          for attempt in 1 2 3; do
+            if rsync -rltz --checksum --delete-delay --delay-updates --timeout=120 \
+              --stats dist/ blogdeploy@120.25.207.55:build/; then
+              break
+            fi
+            if [ "$attempt" = 3 ]; then exit 1; fi
+            echo "Retrying incremental upload ($attempt/3)."
+          done
           ssh -i ~/.ssh/aliyun_deploy -o BatchMode=yes -o IdentitiesOnly=yes \
-            -o StrictHostKeyChecking=yes -o ConnectTimeout=20 \
+            -o StrictHostKeyChecking=yes -o ConnectTimeout=20 -o IPQoS=none \
             -o ServerAliveInterval=15 -o ServerAliveCountMax=4 \
-            blogdeploy@120.25.207.55 "deploy $GITHUB_SHA" < "$RUNNER_TEMP/blog.tar.gz"
+            blogdeploy@120.25.207.55 "activate $GITHUB_SHA"
