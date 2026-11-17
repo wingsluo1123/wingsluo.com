@@ -65,4 +65,5 @@ Cloudflare 中解除原 Worker 的 `wingsluo.com` 自定义域名绑定，然后
 
 不要保留指向旧站的冲突 A、AAAA 或 CNAME 记录。无需删除 Worker 本身。
 HTTPS 由 Caddy 自动签发和续期。灰云时 Cloudflare 的 SSL 模式不影响浏览器到服务器的连接。
-页脚备案号可通过仓库变量 `PUBLIC_ICP_NUMBER` 设置为备案系统中的完整网站备案编号。
+页脚显示已核实的网站备案号“粤ICP备2026182938号-1”，并链接至工信部备案平台。
+以后可通过仓库变量 `PUBLIC_ICP_NUMBER` 覆盖默认编号。

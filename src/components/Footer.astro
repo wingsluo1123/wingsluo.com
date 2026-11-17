@@ -11,7 +11,8 @@ const { noMarginTop = false, class: className, ...attrs } = Astro.props;
 
 const t = useTranslations(Astro.currentLocale);
 const currentYear = new Date().getFullYear();
-const icpNumber = import.meta.env.PUBLIC_ICP_NUMBER?.trim();
+const icpNumber =
+  import.meta.env.PUBLIC_ICP_NUMBER?.trim() || "粤ICP备2026182938号-1";
 ---
 
 <footer
