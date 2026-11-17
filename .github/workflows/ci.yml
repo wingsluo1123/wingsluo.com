@@ -4,6 +4,7 @@ on:
   push:
     branches: [main, feat/astropaper-blog]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -22,8 +23,48 @@ jobs:
       - run: npm run lint
       - run: npm run format:check
       - run: npm run build
+        env:
+          PUBLIC_ICP_NUMBER: ${{ vars.PUBLIC_ICP_NUMBER }}
       - uses: actions/upload-artifact@v4
         with:
           name: wingsluo-blog
           path: dist/
           retention-days: 7
+
+  deploy:
+    if: github.ref == 'refs/heads/feat/astropaper-blog' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: aliyun-production
+      cancel-in-progress: false
+    environment: production
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: wingsluo-blog
+          path: dist
+      - name: Deploy static build to Aliyun
+        env:
+          DEPLOY_KEY: ${{ secrets.ALIYUN_DEPLOY_KEY }}
+          KNOWN_HOSTS: ${{ secrets.ALIYUN_KNOWN_HOSTS }}
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          latest=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/feat/astropaper-blog" --jq .object.sha)
+          if [ "$latest" != "$GITHUB_SHA" ]; then
+            echo "A newer commit exists; skipping this release."
+            exit 0
+          fi
+          install -m 700 -d ~/.ssh
+          trap 'rm -f ~/.ssh/aliyun_deploy' EXIT
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/aliyun_deploy
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/aliyun_deploy ~/.ssh/known_hosts
+          tar -czf "$RUNNER_TEMP/blog.tar.gz" -C dist .
+          ssh -i ~/.ssh/aliyun_deploy -o BatchMode=yes -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes -o ConnectTimeout=20 \
+            -o ServerAliveInterval=15 -o ServerAliveCountMax=4 \
+            blogdeploy@120.25.207.55 "deploy $GITHUB_SHA" < "$RUNNER_TEMP/blog.tar.gz"
