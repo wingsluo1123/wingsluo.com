@@ -9,16 +9,16 @@ typora-root-url: ../../../public
 typora-copy-images-to: ../../../public/images/volunteer-scripts
 ---
 
-两份话术本可在独立阅读页查看，支持翻页、缩放、目录和搜索，也可以下载到设备上离线阅读。
+点击链接可直接打开 PDF 文件，使用浏览器或设备自带的阅读器查看，也可以下载后离线阅读。
 
 ## 志愿服务通用话术本
 
-[开始阅读通用话术本](/read/volunteer-general/)
+[打开通用话术本 PDF](/pdfs/volunteer/general-scripts.pdf)
 
 <a href="/pdfs/volunteer/general-scripts.pdf" download="志愿服务通用话术本.pdf">下载通用话术本</a>
 
 ## 志愿服务专项话术本
 
-[开始阅读专项话术本](/read/volunteer-specialized/)
+[打开专项话术本 PDF](/pdfs/volunteer/specialized-scripts.pdf)
 
 <a href="/pdfs/volunteer/specialized-scripts.pdf" download="志愿服务专项话术本.pdf">下载专项话术本</a>

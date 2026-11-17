@@ -3,4 +3,3 @@ dist/
 .astro/
 public/pagefind/
 package-lock.json
-public/pdfjs/
