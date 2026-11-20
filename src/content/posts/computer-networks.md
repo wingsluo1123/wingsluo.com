@@ -161,3 +161,44 @@ PPP 帧会有定界符，帧中含有数据部分，但是如果数据部分中�
 <img src="/images/computer-networks/image-20261111161006031.png" alt="image-20261111161006031" style="zoom: 80%;" />
 
 **比特填充法：插入“插入比特 0 ”**
+
+<img src="/images/computer-networks/image-20261120143442046.png" alt="image-20261120143442046" style="zoom: 67%;" />
+
+**如何进行差错检测**
+
+循环冗余校验
+
+![image-20261120143640757](/images/computer-networks/image-20261120143640757.png)
+
+![image-20261120144032719](/images/computer-networks/image-20261120144032719.png)
+
+**使用PPP的数据链路层不向上提供可靠传输**
+
+**工作状态：这页 PPT 真没看懂，连图都懒得截图了，还需要沉淀**
+
+
+
+### 媒体接入控制 - 基本概念
+
+在一条总线上，如果两台设备同时发送信号，就会发生信号的碰撞
+
+共享信道需要着重考虑如何协调多个发送站点和接收站点对一个共享传输媒体的占用，也就是媒体接入控制 Medium Access Control 
+
+![image-20261120144832456](/images/computer-networks/image-20261120144832456.png)
+
+![image-20261120150032700](/images/computer-networks/image-20261120150032700.png)
+
+### 媒体接入控制 - 静态划分信道
+
+频分复用 FDM
+
+![image-20261120151908501](/images/computer-networks/image-20261120151908501.png)
+
+时分复用 TDM
+
+![image-20261120152032184](/images/computer-networks/image-20261120152032184.png)
+
+波分复用 WDM
+
+![image-20261120152334676](/images/computer-networks/image-20261120152334676.png)
+
