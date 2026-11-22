@@ -24,7 +24,7 @@ typora-copy-images-to: ../../../public/images/computer-networks
 
 但是当误码的个数为偶数的时候，无法检测出误码，**漏检率**较高
 
-**循环冗余校验CRC**
+**循环冗余校验 CRC**
 
 漏检率很低，易于硬件实现
 
@@ -64,7 +64,7 @@ typora-copy-images-to: ../../../public/images/computer-networks
 
 可靠传输的实现机制可以用到计算机网络的各层协议中，不止数据链路层
 
-### 可靠传输实现机制——停止等待协议SW
+### 可靠传输实现机制——停止等待协议 SW
 
 ![计算机网络笔记配图 5](/images/computer-networks/image-20261107140416622.png)
 
@@ -86,11 +86,11 @@ typora-copy-images-to: ../../../public/images/computer-networks
 
 当往返时延RTT远大于发送时延Td的时候，**信道利用率非常低**，比如卫星链路。于是有了另外两种协议
 
-### 可靠传输实现机制——回退N帧协议GBN
+### 可靠传输实现机制——回退N帧协议 GBN
 
 ![计算机网络笔记配图 11](/images/computer-networks/image-20261107144918710.png)
 
-发送窗口图示（**注意窗口是接收到一个ACK就会滑动一次，而不是5个5个的移动**）
+发送窗口图示（**注意窗口是接收到一个 ACK 就会滑动一次，而不是5个5个的移动**）
 
 ![计算机网络笔记配图 12](/images/computer-networks/image-20261107144946548.png)
 
@@ -120,7 +120,7 @@ typora-copy-images-to: ../../../public/images/computer-networks
 
 ![计算机网络笔记配图 18](/images/computer-networks/image-20261108110736826.png)
 
-### 可靠传输实现机制——选择重传协议SR
+### 可靠传输实现机制——选择重传协议 SR
 
 ![计算机网络笔记配图 19](/images/computer-networks/image-20261108111954600.png)
 
@@ -144,7 +144,7 @@ typora-copy-images-to: ../../../public/images/computer-networks
 
 要点：超时的才重传
 
-### 点对点协议PPP (point to point protocol)
+### 点对点协议 PPP (point to point protocol)
 
 目前使用最广泛的点对点数据链路层协议
 
