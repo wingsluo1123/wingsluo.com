@@ -8,6 +8,78 @@ typora-root-url: ../../../public
 typora-copy-images-to: ../../../public/images/computer-networks
 ---
 
+## 第一章 概述
+
+### **端系统之间的两种通信方式**
+
+**客户 - 服务器方式** ：描述的是进程之间的服务与被服务的关系d
+
+**对等连接方式 ( peer to peer )**
+
+<img src="/images/computer-networks/image-20261123105351540.png" alt="image-20261123105351540" style="zoom:67%;" />
+
+
+
+### **习题**
+
+TCP / IP 参考模型
+
+![image-20261123125034832](/images/computer-networks/image-20261123125034832.png)
+
+OSI 网络分层
+
+![image-20261123124555909](/images/computer-networks/image-20261123124555909.png)
+
+![image-20261123125742760](/images/computer-networks/image-20261123125742760.png)
+
+数据链路层解决的是点到点，传输层（运输层）解决的是端到端（也就是进程之间），网络层解决的是主机与主机之间的逻辑通信
+
+![image-20261123124519024](/images/computer-networks/image-20261123124519024.png)
+
+先记着结论吧。。。
+
+![image-20261123125310582](/images/computer-networks/image-20261123125310582.png)
+
+这个也先记着。。。ICMP 是网际层的一个协议
+
+![image-20261123125430550](/images/computer-networks/image-20261123125430550.png)
+
+![image-20261123125956943](/images/computer-networks/image-20261123125956943.png)
+
+时延
+
+<img src="/images/computer-networks/image-20261123133238484.png" alt="image-20261123133238484" style="zoom: 33%;" />
+
+<img src="/images/computer-networks/image-20261123135119441.png" alt="image-20261123135119441" style="zoom: 40%;" />
+
+![image-20261123140807500](/images/computer-networks/image-20261123140807500.png)
+
+![image-20261123141201614](/images/computer-networks/image-20261123141201614.png)
+
+![image-20261123141631898](/images/computer-networks/image-20261123141631898.png)
+
+
+
+## 第二章 物理层
+
+### 习题
+
+![image-20261123141805040](/images/computer-networks/image-20261123141805040.png)
+
+![image-20261123142010566](/images/computer-networks/image-20261123142010566.png)
+
+![image-20261123143008032](/images/computer-networks/image-20261123143008032.png)
+
+![image-20261123143205539](/images/computer-networks/image-20261123143205539.png)
+
+![image-20261123143856350](/images/computer-networks/image-20261123143856350.png)
+
+![image-20261123144009085](/images/computer-networks/image-20261123144009085.png)
+
+
+
+
+
 ## 第三章 数据传输层
 
 ### 封装成帧
