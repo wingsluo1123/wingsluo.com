@@ -3,3 +3,6 @@ dist/
 .astro/
 public/pagefind/
 package-lock.json
+
+# Keep author-controlled Markdown spacing from blocking article deployments.
+src/content/**/*.md
