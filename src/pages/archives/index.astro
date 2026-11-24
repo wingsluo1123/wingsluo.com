@@ -33,7 +33,7 @@ const posts = await getCollection("posts");
 const filteredPosts = posts.filter(postFilter);
 const monthFormatter = new Intl.DateTimeFormat(locale, { month: "long" });
 
-// Group by the calendar day the post's byline shows (see Datetime.astro),
+// Group by the publication day shown in the byline (see Datetime.astro),
 // not by the build machine's local zone.
 const publishDate = (post: CollectionEntry<"posts">) =>
   dayjs(post.data.pubDatetime).tz(
