@@ -76,7 +76,7 @@ OSI 网络分层
 
 ![image-20261123144009085](/images/computer-networks/image-20261123144009085.png)
 
-
+![image-20261123144209244](/images/computer-networks/image-20261123144209244.png)
 
 
 

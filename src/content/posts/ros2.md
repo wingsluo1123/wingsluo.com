@@ -73,3 +73,18 @@ int main() {
 }
 
 ```
+
+
+
+## 话题通信
+
+列举目前运行的节点 `ros2 node list `
+
+查看某节点订阅了什么话题，发布了什么话题 `ros2 node info /节点名称`
+
+话题同理
+
+接口内容展示 `ros2 interface show 接口路径`
+
+由于小海龟节点订阅了 `/turtle1/cmd_vel: geometry_msgs/msg/Twist` 这个话题，那么我们可以通过这个话题去手动发布一些内容，比如 `ros2 topic pub /turtle1/cmd_vel: geometry_msgs/msg/Twist "{linear: {x: 0.5} , angular: {z: -0.5}}"` ，让小海龟绕着一个点进行转圈
+
